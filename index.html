@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中国竞彩网 · 日常查询与对照参考</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f4f5f7;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 0 1.25rem 3rem;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 28px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      padding: 3.2rem 2.8rem;
+      margin-top: 2.2rem;
+      border: 1px solid #e6e8ec;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b1b2f;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #3d4a5c;
+      max-width: 650px;
+      margin: 0 auto 1.8rem;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: #eef1f5;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #2c3a4e;
+      border: 1px solid #d6dbe3;
+    }
+
+    /* 卡片通用 */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      margin: 2.4rem 0;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e5ea;
+      padding: 1.8rem 1.8rem 2rem;
+      flex: 1 1 280px;
+      transition: box-shadow 0.2s ease, transform 0.1s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transform: translateY(-1px);
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: #0f202f;
+    }
+
+    .card p {
+      color: #3b4b5e;
+      margin-bottom: 0.4rem;
+      font-size: 0.96rem;
+    }
+
+    .card .small-note {
+      font-size: 0.85rem;
+      color: #697b8f;
+      margin-top: 0.6rem;
+    }
+
+    /* 说明区 */
+    .detail-section {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e5ea;
+      padding: 2rem 2.2rem 2.4rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .detail-section h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0f202f;
+    }
+
+    .detail-section p {
+      margin-bottom: 0.9rem;
+      color: #2e3f52;
+    }
+
+    .detail-section ul {
+      list-style: none;
+      padding-left: 0.2rem;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    .detail-section li {
+      padding: 0.4rem 0 0.4rem 1.4rem;
+      position: relative;
+      color: #314457;
+    }
+
+    .detail-section li::before {
+      content: "·";
+      position: absolute;
+      left: 0.2rem;
+      color: #7a8b9e;
+      font-weight: 700;
+    }
+
+    /* FAQ摘要 */
+    .faq-compact {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e2e5ea;
+      padding: 1.8rem 2rem 2rem;
+      margin: 1.8rem 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-compact h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: #0f202f;
+    }
+
+    .faq-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #eaedf2;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1d2d40;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #46586c;
+      font-size: 0.95rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      text-align: center;
+      margin-top: 2.6rem;
+      padding: 1.8rem 0 0.8rem;
+      border-top: 1px solid #d8dce3;
+      color: #4a5d72;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #1f3a57;
+      text-decoration: none;
+      border-bottom: 1px dotted #b6c2d0;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      border-bottom: 1px solid #1f3a57;
+    }
+
+    .footer-meta {
+      margin-top: 0.8rem;
+      font-size: 0.82rem;
+      color: #6c7f94;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e3e9;
+      margin: 0.6rem 0;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 2rem 1.4rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .card {
+        flex: 1 1 100%;
+      }
+      .detail-section {
+        padding: 1.4rem 1.2rem;
+      }
+      .faq-compact {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HERO 区 -->
+  <div class="hero">
+    <span class="hero-tag">📋 日常查询 · 对照参考</span>
+    <h1>了解竞彩，从一份扎实的参考开始</h1>
+    <p>无论是赛前翻看数据，还是赛后对照玩法说明，一个靠谱的查询平台能让思路更清晰。<br>
+    我们习惯把 <a href="https://chinasportlotto.com" style="color:#0f2c4a; text-decoration: underline; text-underline-offset: 2px; font-weight: 500;">中国竞彩网</a> 当作日常对照的起点——信息整合得清楚，更新也及时。</p>
+  </div>
+
+  <!-- 优势区：卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>📊 场次与数据</h3>
+      <p>覆盖足球、篮球主流赛事，赔率变动、让球、胜平负等基础项一目了然。适合赛前快速浏览，也适合赛后复盘比对。</p>
+      <div class="small-note">数据更新通常与官方保持同步</div>
+    </div>
+    <div class="card">
+      <h3>📖 玩法说明对照</h3>
+      <p>从混合过关到单关，从比分到总进球，每项规则都有清晰解释。新手看一遍能明白基本逻辑，老手也能快速定位细节。</p>
+      <div class="small-note">可作为延伸阅读的参考文本</div>
+    </div>
+    <div class="card">
+      <h3>🧾 历史与统计</h3>
+      <p>往期开奖结果、奖金计算示例、过关统计——这些内容适合按需查阅，不花哨，但扎实。</p>
+      <div class="small-note">适合做简单对照和延伸了解</div>
+    </div>
+  </div>
+
+  <!-- 说明区：从日常查询角度 -->
+  <div class="detail-section">
+    <h2>怎么用这个站点做日常对照？</h2>
+    <p>很多人把竞彩相关信息放在收藏夹，但真正用起来时，往往需要反复切换页面。一个信息层次清楚的站点可以省下不少时间。</p>
+    <ul>
+      <li><strong>赛前查询：</strong> 查看对阵、让球、赔率变化，结合自己的理解做简单记录。</li>
+      <li><strong>玩法延伸阅读：</strong> 比如“混合过关”的具体限制、“单关”的适用场次——这些说明值得逐条看过，避免理解偏差。</li>
+      <li><strong>对照开奖：</strong> 检查自己记录的场次与实际开奖结果是否一致，同时留意奖金计算方式。</li>
+    </ul>
+    <p style="margin-top: 0.6rem;">把这些动作变成习惯，比临时抱佛脚要踏实得多。<a href="https://chinasportlotto.com" style="color: #1f3a57; text-decoration: underline; text-underline-offset: 2px;">中国竞彩网</a> 的结构很适合这类按需查阅，页面不杂乱，分类也直接。</p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-compact">
+    <h2>常见疑问 · 摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">🧐 赔率变动快，以哪里为准？</div>
+      <div class="faq-a">所有在售场次的赔率都以出票时刻为准，页面显示仅供当时参考。建议在投注前再次核对实时数据。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">📅 如何查看某场比赛的详细玩法？</div>
+      <div class="faq-a">进入对应联赛或赛事页面，点击场次编号即可展开让球、胜平负、比分等选项，部分页面还提供玩法规则弹窗。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">📌 奖金计算有没有官方示例？</div>
+      <div class="faq-a">在“奖金计算”或“帮助”板块能看到标准示例，包括固定奖金与浮动奖金的区别，适合作为延伸阅读对照。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <p>更多日常查询与延伸阅读，可前往 <a href="https://chinasportlotto.com">中国竞彩网</a> 浏览完整信息。</p>
+    <div class="footer-meta">
+      本页为独立介绍参考 · 内容仅供参考，不构成任何建议
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
